@@ -19,13 +19,26 @@ namespace Microsoft.Azure.Management.Redis
           {
               return new Tuple<string, string, string>[]
               {
-                new Tuple<string, string, string>("Cache", "FirewallRules", "2019-07-01"),
-                new Tuple<string, string, string>("Cache", "LinkedServer", "2019-07-01"),
-                new Tuple<string, string, string>("Cache", "Operations", "2019-07-01"),
-                new Tuple<string, string, string>("Cache", "PatchSchedules", "2019-07-01"),
-                new Tuple<string, string, string>("Cache", "Redis", "2019-07-01"),
+                new Tuple<string, string, string>("Cache", "FirewallRules", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "LinkedServer", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "Operations", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "PatchSchedules", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "PrivateEndpointConnections", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "PrivateLinkResources", "2021-06-01"),
+                new Tuple<string, string, string>("Cache", "Redis", "2021-06-01"),
               }.AsEnumerable();
           }
       }
+      // BEGIN: Code Generation Metadata Section
+      public static readonly String AutoRestVersion = "v2";
+      public static readonly String AutoRestBootStrapperVersion = "autorest@2.0.4413";
+      public static readonly String AutoRestCmdExecuted = "cmd.exe /c autorest.cmd C:\\Users\\suryar\\azure-rest-api-specs-pr\\specification\\redis\\resource-manager\\readme.md --csharp --version=v2 --reflect-api-versions --csharp.output-folder=C:\\Users\\suryar\\azure-sdk-for-net\\sdk\\redis\\Microsoft.Azure.Management.RedisCache\\src\\Generated\\";
+      public static readonly String GithubForkName = "Azure";
+      public static readonly String GithubBranchName = "master";
+      public static readonly String GithubCommidId = "8dff86df71bee429af84ea4713288ef3cdd1db2f";
+      public static readonly String CodeGenerationErrors = "";
+      public static readonly String GithubRepoName = "azure-rest-api-specs";
+      // END: Code Generation Metadata Section
   }
 }
+

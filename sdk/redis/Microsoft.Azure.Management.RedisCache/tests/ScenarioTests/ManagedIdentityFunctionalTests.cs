@@ -1,7 +1,4 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License. See License.txt in the project root for license information.
-
-using AzureRedisCache.Tests.ScenarioTests;
+﻿using AzureRedisCache.Tests.ScenarioTests;
 using Microsoft.Azure.Management.Redis;
 using Microsoft.Azure.Management.Redis.Models;
 using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
@@ -10,10 +7,10 @@ using Xunit;
 
 namespace AzureRedisCache.Tests
 {
-    public class BeginCreateFunctionalTests : TestBase
+    public class ManagedIdentityFunctionalTests : TestBase
     {
         [Fact]
-        public void BeginCreateFunctionalTest()
+        public void ManagedIdentityFunctionalTest()
         {
             using (var context = MockContext.Start(this.GetType()))
             {
@@ -37,17 +34,12 @@ namespace AzureRedisCache.Tests
                                             },
                                             MinimumTlsVersion = TlsVersion.OneFullStopTwo,
                                             ReplicasPerMaster = 2,
+                                            Identity = new Identity()
+                                            {
+                                                Type= "SystemAssigned"
+                                            }
                                         });
 
-                Assert.Contains(redisCacheName, response.Id);
-                Assert.Equal(redisCacheName, response.Name);
-                Assert.Equal(ProvisioningState.Creating, response.ProvisioningState, ignoreCase: true);
-                Assert.Equal(SkuName.Premium, response.Sku.Name);
-                Assert.Equal(SkuFamily.P, response.Sku.Family);
-                Assert.Equal(TlsVersion.OneFullStopTwo, response.MinimumTlsVersion);
-                Assert.Equal(2, response.ReplicasPerMaster);
-
-                Assert.Equal(3, response.Instances.Count);
                 for (int i = 0; i < response.Instances.Count; i++)
                 {
                     Assert.Equal(15000 + i, response.Instances[i].SslPort);
@@ -73,4 +65,3 @@ namespace AzureRedisCache.Tests
         }
     }
 }
-

@@ -1,1 +1,1 @@
-﻿Start-AutoRestCodeGeneration -ResourceProvider "redis/resource-manager" -AutoRestVersion "v2"
+﻿Start-AutoRestCodeGenerationWithLocalConfig -ResourceProvider "redis/resource-manager" -AutoRestVersion "v2" -LocalConfigFilePath "C:\Users\suryar\azure-rest-api-specs-pr\specification\redis\resource-manager\readme.md" -SdkDirectory "C:\Users\suryar\azure-sdk-for-net\sdk\redis\Microsoft.Azure.Management.RedisCache\src\Generated\"
